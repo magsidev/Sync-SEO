@@ -5,14 +5,15 @@ import { Zap, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check local storage or system preference
+    // Check local storage - default to light if nothing is found
     if (typeof window !== 'undefined') {
       const storedTheme = localStorage.getItem('theme');
-      const isDarkMode = storedTheme === 'dark' || 
-        (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      
+      // Only set to dark if explicitly chosen by the user in a previous session
+      const isDarkMode = storedTheme === 'dark';
         
       setIsDark(isDarkMode);
       if (isDarkMode) {
