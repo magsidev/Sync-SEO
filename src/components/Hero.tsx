@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="container section-padding" style={{ paddingTop: "200px", textAlign: "center", position: "relative" }}>
+    <section className="container section-padding hero-padding" style={{ paddingTop: "200px", textAlign: "center", position: "relative" }}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

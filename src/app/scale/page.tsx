@@ -14,7 +14,7 @@ export default function ScalePage() {
       <Navbar />
 
       {/* 1. The Problem Header */}
-      <section className="container section-padding" style={{ paddingTop: "200px" }}>
+      <section className="container section-padding hero-padding" style={{ paddingTop: "200px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
