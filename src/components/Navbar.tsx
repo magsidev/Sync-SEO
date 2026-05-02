@@ -128,7 +128,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="glass mobile-only" style={{ 
+        <div className="glass" style={{ 
           position: "fixed", 
           top: "85px", 
           left: "50%", 
