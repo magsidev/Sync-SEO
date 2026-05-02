@@ -178,6 +178,17 @@ export default function Apply() {
             </motion.div>
           )}
 
+          {/* Hidden static form for Netlify crawler detection */}
+          <form name="partner-inquiry" data-netlify="true" hidden>
+            <input type="text" name="full-name" />
+            <input type="text" name="agency-name" />
+            <input type="url" name="agency-url" />
+            <select name="active-clients"></select>
+            <select name="bottleneck"></select>
+            <input type="text" name="tools" />
+            <textarea name="growth-goal"></textarea>
+          </form>
+
         </div>
       </section>
 
