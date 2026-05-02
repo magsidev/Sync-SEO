@@ -201,3 +201,70 @@ a.nav-link:hover::after {
     display: block;
   }
 }
+
+/* --- MOBILE SPECIFIC OVERRIDES --- */
+@media (max-width: 768px) {
+  /* Fluid Typography for Mobile Only */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    line-height: 1.1 !important;
+  }
+  
+  h2 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+    line-height: 1.2 !important;
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem) !important;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+  
+  .section-padding {
+    padding: 60px 0 !important;
+  }
+
+  /* Hide Decorative Elements */
+  .bg-glow {
+    display: none !important;
+  }
+
+  /* Thumb-Friendly Buttons */
+  .btn-primary, .btn-secondary {
+    padding: 16px 24px !important;
+    min-height: 48px !important;
+    justify-content: center;
+  }
+  
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .hero-buttons > * {
+    width: 100%;
+  }
+
+  /* Grid Stacking Utilities */
+  .mobile-stack {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  
+  /* Visibility Toggles */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-primary, .btn-secondary {
+    width: 100% !important;
+  }
+}

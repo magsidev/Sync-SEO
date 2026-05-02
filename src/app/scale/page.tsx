@@ -65,7 +65,7 @@ export default function ScalePage() {
         </div>
         
         <div className="glass" style={{ maxWidth: "1000px", margin: "0 auto", overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid var(--border)" }}>
+          <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid var(--border)" }}>
             <div style={{ padding: "24px", background: "rgba(255, 255, 255, 0.02)", borderRight: "1px solid var(--border)" }}>
               <h3 style={{ color: "var(--text-secondary)", fontSize: "1.2rem" }}>Standard Freelancer</h3>
             </div>
@@ -92,7 +92,7 @@ export default function ScalePage() {
               win: "Provides polished, white-label ready reporting."
             }
           ].map((row, i) => (
-            <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: i === 3 ? "none" : "1px solid var(--border)" }}>
+            <div key={i} className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: i === 3 ? "none" : "1px solid var(--border)" }}>
               <div style={{ padding: "24px", borderRight: "1px solid var(--border)", display: "flex", gap: "12px", alignItems: "flex-start" }}>
                 <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: "2px" }} />
                 <span style={{ color: "var(--text-secondary)", lineHeight: 1.6 }}>{row.fail}</span>
@@ -116,7 +116,7 @@ export default function ScalePage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", maxWidth: "1000px", margin: "0 auto" }}>
+          <div className="mobile-stack" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", maxWidth: "1000px", margin: "0 auto" }}>
             {[
               "1. Technical Foundation Audits",
               "2. Entity & Keyword Mapping",

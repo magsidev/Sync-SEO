@@ -13,7 +13,7 @@ export default function Footer() {
       marginTop: "100px" 
     }}>
       <div className="container">
-        <div style={{ 
+        <div className="mobile-stack" style={{ 
           display: "grid", 
           gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", 
           gap: "60px",
