@@ -26,7 +26,7 @@ export default function Workflow() {
   return (
     <section id="workflow" className="section-padding" style={{ background: "var(--bg-secondary)", position: "relative" }}>
       <div className="container">
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "60px", alignItems: "center" }}>
           <div>
             <h2 style={{ fontSize: "3rem", marginBottom: "24px" }}>Built to <span className="text-emerald">Sync</span> With Your Agency</h2>
             <p style={{ color: "var(--text-secondary)", marginBottom: "32px", fontSize: "1.1rem" }}>
