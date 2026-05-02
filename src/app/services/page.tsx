@@ -67,7 +67,7 @@ export default function Services() {
       
       <Navbar />
 
-      <section className="container section-padding" style={{ paddingTop: "200px" }}>
+      <section className="container section-padding hero-padding" style={{ paddingTop: "200px" }}>
         <div style={{ textAlign: "center", marginBottom: "80px" }}>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}

@@ -133,7 +133,7 @@ export default function WorkflowPage() {
       <div className="bg-glow" style={{ top: "-5%", left: "-5%", background: "radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%)" }} />
       <Navbar />
 
-      <section className="container section-padding" style={{ paddingTop: "200px", paddingBottom: "100px" }}>
+      <section className="container section-padding hero-padding" style={{ paddingTop: "200px", paddingBottom: "100px" }}>
         <div style={{ textAlign: "center", marginBottom: "80px" }}>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

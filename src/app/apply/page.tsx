@@ -41,7 +41,7 @@ export default function Apply() {
       
       <Navbar />
 
-      <section className="container section-padding" style={{ paddingTop: "180px", paddingBottom: "100px" }}>
+      <section className="container section-padding hero-padding" style={{ paddingTop: "180px", paddingBottom: "100px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           
           {!isSubmitted ? (
