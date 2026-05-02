@@ -74,11 +74,10 @@ export default function Apply() {
                 <form 
                   name="partner-inquiry" 
                   method="POST" 
-                  data-netlify="true"
                   onSubmit={handleSubmit} 
                   style={{ display: "flex", flexDirection: "column", gap: "24px" }}
                 >
-                  {/* Required for Netlify Forms in Next.js */}
+                  {/* Required for form mapping */}
                   <input type="hidden" name="form-name" value="partner-inquiry" />
                   
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px" }}>
@@ -177,17 +176,6 @@ export default function Apply() {
               </button>
             </motion.div>
           )}
-
-          {/* Hidden static form for Netlify crawler detection */}
-          <form name="partner-inquiry" data-netlify="true" hidden>
-            <input type="text" name="full-name" />
-            <input type="text" name="agency-name" />
-            <input type="url" name="agency-url" />
-            <select name="active-clients"></select>
-            <select name="bottleneck"></select>
-            <input type="text" name="tools" />
-            <textarea name="growth-goal"></textarea>
-          </form>
 
         </div>
       </section>
