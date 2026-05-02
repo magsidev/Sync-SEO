@@ -15,13 +15,18 @@ export default function Apply() {
     const formData = new FormData(form);
     
     try {
-      await fetch("/", {
+      const response = await fetch(window.location.pathname, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         // @ts-ignore
         body: new URLSearchParams(formData).toString(),
       });
-      setIsSubmitted(true);
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error("Form submission failed");
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       alert("There was an error submitting your inquiry. Please try again.");
@@ -74,11 +79,15 @@ export default function Apply() {
                 <form 
                   name="partner-inquiry" 
                   method="POST" 
+                  action="/apply"
                   onSubmit={handleSubmit} 
                   style={{ display: "flex", flexDirection: "column", gap: "24px" }}
                 >
-                  {/* Required for form mapping */}
+                  {/* Required for form mapping and spam protection */}
                   <input type="hidden" name="form-name" value="partner-inquiry" />
+                  <p hidden>
+                    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                  </p>
                   
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px" }}>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>

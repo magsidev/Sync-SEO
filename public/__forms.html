@@ -7,7 +7,7 @@
 </head>
 <body>
     <!-- This file is required for Netlify Next.js Runtime v5 to detect forms -->
-    <form name="partner-inquiry" data-netlify="true" hidden>
+    <form name="partner-inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
         <input type="text" name="full-name" />
         <input type="text" name="agency-name" />
         <input type="url" name="agency-url" />
@@ -16,6 +16,7 @@
         <input type="text" name="tools" />
         <textarea name="growth-goal"></textarea>
         <input type="hidden" name="form-name" value="partner-inquiry" />
+        <input name="bot-field" />
     </form>
 </body>
 </html>
