@@ -9,12 +9,23 @@ import Footer from "@/components/Footer";
 export default function Apply() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        // @ts-ignore
+        body: new URLSearchParams(formData).toString(),
+      });
       setIsSubmitted(true);
-    }, 800);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your inquiry. Please try again.");
+    }
   };
 
   return (
@@ -60,27 +71,35 @@ export default function Apply() {
               </div>
 
               <div className="glass" style={{ padding: "48px", borderRadius: "24px" }}>
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                <form 
+                  name="partner-inquiry" 
+                  method="POST" 
+                  data-netlify="true"
+                  onSubmit={handleSubmit} 
+                  style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+                >
+                  {/* Required for Netlify Forms in Next.js */}
+                  <input type="hidden" name="form-name" value="partner-inquiry" />
                   
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px" }}>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>Full Name</label>
-                      <input type="text" required placeholder="John Doe" style={inputStyle} />
+                      <input type="text" name="full-name" required placeholder="John Doe" style={inputStyle} />
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>Agency Name</label>
-                      <input type="text" required placeholder="Acme Digital" style={inputStyle} />
+                      <input type="text" name="agency-name" required placeholder="Acme Digital" style={inputStyle} />
                     </div>
                   </div>
 
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "24px" }}>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>Agency URL</label>
-                      <input type="url" required placeholder="https://acmedigital.com" style={inputStyle} />
+                      <input type="url" name="agency-url" required placeholder="https://acmedigital.com" style={inputStyle} />
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>Current Active SEO Clients</label>
-                      <select required style={inputStyle} defaultValue="">
+                      <select name="active-clients" required style={inputStyle} defaultValue="">
                         <option value="" disabled>Select an option</option>
                         <option value="1-5">1 - 5 Clients</option>
                         <option value="6-15">6 - 15 Clients</option>
@@ -92,7 +111,7 @@ export default function Apply() {
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                     <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>What is your primary agency bottleneck?</label>
-                    <select required style={inputStyle} defaultValue="">
+                    <select name="bottleneck" required style={inputStyle} defaultValue="">
                       <option value="" disabled>Select your biggest hurdle</option>
                       <option value="technical">Technical Audits & Implementation</option>
                       <option value="content">Content Production at Scale</option>
@@ -103,12 +122,12 @@ export default function Apply() {
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                     <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>Which Project Management tools do you use? (e.g. Asana, Slack)</label>
-                    <input type="text" required placeholder="Slack, ClickUp, Notion, etc." style={inputStyle} />
+                    <input type="text" name="tools" required placeholder="Slack, ClickUp, Notion, etc." style={inputStyle} />
                   </div>
 
                   <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                     <label style={{ fontSize: "0.9rem", color: "var(--text-secondary)", fontWeight: 500 }}>What is your #1 goal for the next 6 months?</label>
-                    <textarea required placeholder="Briefly describe your agency's growth target..." rows={4} style={{ ...inputStyle, resize: "vertical" }}></textarea>
+                    <textarea name="growth-goal" required placeholder="Briefly describe your agency's growth target..." rows={4} style={{ ...inputStyle, resize: "vertical" }}></textarea>
                   </div>
 
                   <button type="submit" className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "16px", marginTop: "16px", fontSize: "1.05rem" }}>
