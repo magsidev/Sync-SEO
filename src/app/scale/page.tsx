@@ -61,16 +61,16 @@ export default function ScalePage() {
       {/* 2. Partner vs. Freelancer Comparison Table */}
       <section className="container section-padding" style={{ paddingTop: "40px" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
-          <h2 style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)", fontFamily: "var(--font-outfit)" }}>The Fulfillment Reality</h2>
+          <h2 style={{ fontSize: "2.5rem", fontFamily: "var(--font-outfit)" }}>The Fulfillment Reality</h2>
         </div>
         
         <div className="glass" style={{ maxWidth: "1000px", margin: "0 auto", overflow: "hidden" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", borderBottom: "1px solid var(--border)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid var(--border)" }}>
             <div style={{ padding: "24px", background: "rgba(255, 255, 255, 0.02)", borderRight: "1px solid var(--border)" }}>
-              <h3 style={{ color: "var(--text-secondary)", fontSize: "1.1rem" }}>Standard Freelancer</h3>
+              <h3 style={{ color: "var(--text-secondary)", fontSize: "1.2rem" }}>Standard Freelancer</h3>
             </div>
             <div style={{ padding: "24px", background: "rgba(16, 185, 129, 0.05)" }}>
-              <h3 style={{ color: "var(--accent-emerald)", fontSize: "1.1rem", fontWeight: 700 }}>Sync SEO Partner</h3>
+              <h3 style={{ color: "var(--accent-emerald)", fontSize: "1.2rem", fontWeight: 700 }}>Sync SEO Partner</h3>
             </div>
           </div>
           
@@ -92,14 +92,14 @@ export default function ScalePage() {
               win: "Provides polished, white-label ready reporting."
             }
           ].map((row, i) => (
-            <div key={i} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", borderBottom: i === 3 ? "none" : "1px solid var(--border)" }}>
+            <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: i === 3 ? "none" : "1px solid var(--border)" }}>
               <div style={{ padding: "24px", borderRight: "1px solid var(--border)", display: "flex", gap: "12px", alignItems: "flex-start" }}>
                 <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <span style={{ color: "var(--text-secondary)", lineHeight: 1.6, fontSize: "0.95rem" }}>{row.fail}</span>
+                <span style={{ color: "var(--text-secondary)", lineHeight: 1.6 }}>{row.fail}</span>
               </div>
               <div style={{ padding: "24px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
                 <CheckCircle2 size={20} color="var(--accent-emerald)" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <span style={{ color: "var(--text-primary)", lineHeight: 1.6, fontSize: "0.95rem" }}>{row.win}</span>
+                <span style={{ color: "var(--text-primary)", lineHeight: 1.6 }}>{row.win}</span>
               </div>
             </div>
           ))}
@@ -107,16 +107,16 @@ export default function ScalePage() {
       </section>
 
       {/* 3. The Fulfillment Menu (7-Silo Execution) */}
-      <section style={{ background: "var(--bg-secondary)", padding: "80px 0", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+      <section style={{ background: "var(--bg-secondary)", padding: "100px 0", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <h2 style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)", fontFamily: "var(--font-outfit)", marginBottom: "16px" }}>Core Product: 7-Silo Execution</h2>
-            <p style={{ color: "var(--text-secondary)", fontSize: "1.05rem", maxWidth: "600px", margin: "0 auto" }}>
+            <h2 style={{ fontSize: "2.5rem", fontFamily: "var(--font-outfit)", marginBottom: "16px" }}>Core Product: 7-Silo Execution</h2>
+            <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto" }}>
               We don't sell hours. We sell a standardized, predictable content and technical architecture designed for search visibility.
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px", maxWidth: "1000px", margin: "0 auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", maxWidth: "1000px", margin: "0 auto" }}>
             {[
               "1. Technical Foundation Audits",
               "2. Entity & Keyword Mapping",
@@ -126,9 +126,9 @@ export default function ScalePage() {
               "6. Off-Page Asset Acquisition",
               "7. Local Entity Prominence"
             ].map((silo, i) => (
-              <div key={i} className="glass" style={{ padding: "16px 20px", display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ color: "var(--accent-blue)" }}><FileText size={20} /></div>
-                <div style={{ fontWeight: 600, fontSize: "1rem" }}>{silo}</div>
+              <div key={i} className="glass" style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: "16px" }}>
+                <div style={{ color: "var(--accent-blue)" }}><FileText size={24} /></div>
+                <div style={{ fontWeight: 600, fontSize: "1.05rem" }}>{silo}</div>
               </div>
             ))}
           </div>
@@ -138,14 +138,14 @@ export default function ScalePage() {
       {/* 4. The 'Profit Margin' Pitch */}
       <section className="container section-padding">
         <div style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
-          <h2 style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)", fontFamily: "var(--font-outfit)", marginBottom: "24px" }}>Maintain 50-70% Margins</h2>
-          <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "40px" }}>
+          <h2 style={{ fontSize: "2.5rem", fontFamily: "var(--font-outfit)", marginBottom: "24px" }}>Maintain 50-70% Margins</h2>
+          <p style={{ color: "var(--text-secondary)", fontSize: "1.2rem", lineHeight: 1.8, marginBottom: "40px" }}>
             Hiring a mid-level US SEO specialist costs $6,000+ per month, plus benefits, software seats, and management time. That instantly compresses your margins. Our white-label rate structure is designed specifically for agency unit economics. By outsourcing your technical and content execution to Sync SEO, you maintain a healthy 50% to 70% gross margin on your retainers, while freeing up 100% of your time to focus on client strategy, retention, and closing new MRR.
           </p>
           
           {/* CTA */}
-          <Link href="/apply" style={{ width: "100%", display: "block" }}>
-            <button className="btn-primary" style={{ width: "min(100%, 400px)", margin: "0 auto" }}>
+          <Link href="/apply">
+            <button className="btn-primary" style={{ padding: "16px 32px", fontSize: "1.1rem" }}>
               Request our White-Label Rate Card <ArrowRight size={20} />
             </button>
           </Link>

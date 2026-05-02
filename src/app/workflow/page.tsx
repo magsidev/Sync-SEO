@@ -60,7 +60,7 @@ const workflowSteps = [
     points: [
       "Target keywords & Content plan",
       "Location pages (if needed) & Link building plan",
-      "Define timeline (3-6 months realistic)"
+      "Define timeline (3–6 months realistic)"
     ]
   },
   {

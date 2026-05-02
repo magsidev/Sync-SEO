@@ -15,11 +15,11 @@ export default function Footer() {
       <div className="container">
         <div style={{ 
           display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
-          gap: "48px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", 
+          gap: "60px",
           marginBottom: "60px"
         }}>
-          <div style={{ gridColumn: "span 1" }}>
+          <div style={{ gridColumn: "span 2" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "24px" }}>
               <div style={{ 
                 width: "32px", 
